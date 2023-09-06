@@ -34,7 +34,7 @@
 
 <script>
     export default {
-        name: "Main",
+        name: 'Main',
         computed: {
 
         },
@@ -58,8 +58,8 @@
             };
         },
         created() {
-            this.loginInfo.username = sessionStorage.getItem("username")
-            this.loginInfo.password = sessionStorage.getItem("password")
+            this.loginInfo.username = sessionStorage.getItem('username')
+            this.loginInfo.password = sessionStorage.getItem('password')
             console.log(this.loginInfo)
         },
         mounted() {
@@ -68,8 +68,8 @@
         methods: {
             onSubmit() {
                 this.$http({
-                    url: '/getCampaigns', //请求的后台接口
-                    method: "get", //get请求方式
+                    url: '/webservice/getCampaigns', //请求的后台接口
+                    method: 'get', //get请求方式
                     params: this.loginInfo //传给后台的参数
                 }).then(res => {
                     //请求成功
@@ -82,9 +82,9 @@
             },
             // 退出登录
             layout() {
-                sessionStorage.removeItem("token");
+                sessionStorage.removeItem('token');
                 this.$router.push({
-                    path: "/login",
+                    path: '/login',
                 });
             },
             handleClose(done) {

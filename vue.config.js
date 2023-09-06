@@ -1,23 +1,23 @@
 // vue.config.js
 module.exports = {
     // lintOnSave: false,
-    // devServer: {
-    // host: 'localhost', //域名
-    // port: 8080, //端口
+    devServer: {
+    host: 'localhost', //域名
+    port: 8080, //端口
     // proxy: 'http://61.147.77.40:80'
-    // proxy: { //进行代理转发
-    //     '/api': {
-    //         //要解决跨域的接口的域名
-    //         target: 'http://dmdelivery.com/webservice/',
-    //         // 是否开启本地代理 默认true; 如果接口跨域，需要进行此参数配置
-    //         changeOrigin: true,
-    //         //如果是https接口，需要配置这个参数
-    //         secure: false,
-    //         pathRewrite: {
-    //             '/api': '' //重写地址
-    //         }
-    //     }
-    // }
+    proxy: { //进行代理转发
+        '/api': {
+            //要解决跨域的接口的域名
+            target: 'http://dmdelivery.com/',
+            // 是否开启本地代理 默认true; 如果接口跨域，需要进行此参数配置
+            changeOrigin: true,
+            //如果是https接口，需要配置这个参数
+            secure: false,
+            pathRewrite: {
+                '^/api': '' //重写地址
+            }
+        }
+    }
     // open: false,
     // host: '127.0.0.1',
     // port: 8080,
@@ -28,5 +28,5 @@ module.exports = {
     //         '/api': ''
     //     }
     // }
-    // }
+    }
 }
